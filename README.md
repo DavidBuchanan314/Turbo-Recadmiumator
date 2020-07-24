@@ -1,4 +1,4 @@
-# Turbo-Recadmiumator
+# Turbo-Recadmiumator [WIP]
 A remake of truedread/netflix-1080p which auto-patches cadmium-playercore at runtime to enable enhanced playback features.
 
 Currently Firefox only, although it should only be a minor change to make it
@@ -14,8 +14,14 @@ It remains to be seen how robust my regexes will be to playercore updates.
 
 - Enable <kbd>Ctrl</kbd>+<kbd>Shift+</kbd><kbd>Alt</kbd>+<kbd>S</kbd> bitrate selection window.
 
-- 1080p Video.
+- 1080p video.
 
 - Disable VP9 profiles.
 
 - Enable 5.1 audio profile.
+
+## TODO:
+
+- Auto-select max available bitrate.
+
+- Add settings UI (right now, you have to edit the source...)
