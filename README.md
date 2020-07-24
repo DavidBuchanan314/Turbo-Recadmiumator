@@ -19,8 +19,20 @@ It remains to be seen how robust my regexes will be to playercore updates.
 
 - Enable 5.1 audio profile.
 
+- Auto-select stream with max available bitrate.
+
 ## TODO:
 
-- Auto-select max available bitrate.
-
 - Add settings UI (right now, you have to edit the source...)
+
+- Add comments detailing where I stole the code from...
+
+## Credits:
+
+This codebase is cobbled together with bits and pieces from [truedread/netflix-1080p](https://github.com/truedread/netflix-1080p) and its various forks. Notably:
+
+- https://github.com/vladikoff/netflix-1080p-firefox
+
+- https://github.com/TheGoddessInari/netflix-1080p-firefox
+
+- https://github.com/OothecaPickle/netflix-1080p
