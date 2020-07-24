@@ -1,8 +1,3 @@
-var my_config = {
-	"use_VP9": false,
-	"use_5.1": false
-}
-
 // https://stackoverflow.com/a/45985333
 function getBrowser() {
 	if (typeof chrome !== "undefined") {
@@ -31,9 +26,7 @@ chrome.webRequest.onBeforeRequest.addListener(
 				fetch(browser.extension.getURL("cadmium-playercore-shim.js")).
 					then(response => response.text()).
 					then(text => {
-						my_config["cadmium_url"] =	details.url;
-						var prefix = "var my_config = " + JSON.stringify(my_config) + ";\n";
-						filter.write(encoder.encode(prefix + text));
+						filter.write(encoder.encode(text));
 						filter.close();
 					}).catch(err => {
 						console.error(`Error: ${err}`);
