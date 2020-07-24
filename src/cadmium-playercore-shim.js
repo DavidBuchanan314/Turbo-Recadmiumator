@@ -1,3 +1,5 @@
+// ^ my_config declaration will be inserted above
+
 /* This script runs as a drop-in replacement of the original cadmium-playercore */
 
 function repr(obj) {
@@ -61,12 +63,12 @@ if (my_config["use_5.1"]) {
 do_patch(
 	"Custom profiles",
 	/(viewableId:.,profiles:).,/,
-	"$1" + repr(custom_profiles) + ","
+	"$1 custom_profiles,"
 );
 
 do_patch(
 	"Re-enable Ctrl+Shift+Alt+S menu",
-	/this\...\....\&\&this\.toggle\(\)/,
+	/this\...\....\&\&this\.toggle\(\);/,
 	"this.toggle();");
 
 eval(cadmium_src);
