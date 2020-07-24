@@ -1,8 +1,7 @@
 # Turbo-Recadmiumator [WIP]
 A remake of truedread/netflix-1080p which auto-patches cadmium-playercore at runtime to enable enhanced playback features.
 
-Currently Firefox only, although it should only be a minor change to make it
-work with chrom{e,ium}.
+Works in both Firefox and Chrom{e,ium}.
 
 Rather than bundling a hand-patched cadmium-playercore.js, this extension
 performs the patches at runtime using regex. Therefore, it should be publishable
