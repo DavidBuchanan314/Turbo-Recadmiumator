@@ -12,8 +12,10 @@ It remains to be seen how robust my regexes will be to playercore updates.
 
 ## Current features:
 
-	- 1080p Video.
+- Enable <kbd>Ctrl</kbd>+<kbd>Shift+</kbd><kbd>Alt</kbd>+<kbd>S</kbd> bitrate selection window.
 
-	- Disable VP9 profiles.
+- 1080p Video.
 
-	- Enable 5.1 audio profile.
+- Disable VP9 profiles.
+
+- Enable 5.1 audio profile.
