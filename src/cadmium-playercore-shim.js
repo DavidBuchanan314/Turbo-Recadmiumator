@@ -74,7 +74,7 @@ do_patch(
 
 do_patch(
 	"Re-enable Ctrl+Shift+Alt+S menu",
-	/this\...\....\&\&this\.toggle\(\);/,
+	/this\...\....\s*\&\&\s*this\.toggle\(\);/,
 	"this.toggle();");
 
 eval(cadmium_src);
