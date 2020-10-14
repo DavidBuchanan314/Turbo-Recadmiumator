@@ -11,7 +11,7 @@ It remains to be seen how robust my regexes will be to playercore updates.
 
 ## Current features:
 
-- Enable <kbd>Ctrl</kbd>+<kbd>Shift+</kbd><kbd>Alt</kbd>+<kbd>S</kbd> bitrate selection window.
+- Enable <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>S</kbd> bitrate selection window.
 
 - 1080p video.
 
@@ -20,6 +20,18 @@ It remains to be seen how robust my regexes will be to playercore updates.
 - Enable 5.1 audio profile.
 
 - Auto-select stream with max available bitrate.
+
+## Undocumented Keyboard Shortcuts:
+
+Netflix has a bunch of undocumented keyboard shortcuts, that do useful things. This list may be incomplete.
+
+- <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>S</kbd> - Bitrate selection menu (re-enabled by this project)
+
+- <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>D</kbd> - Debug overlay - displays lots of useful info and stats, including current resolution and bitrate.
+
+- <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd> - Upload custom subtitle file, in DFXP/TTML format.
+
+- <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>L</kbd> - Log viewer.
 
 ## TODO:
 
