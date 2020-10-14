@@ -19,12 +19,14 @@ function do_patch(desc, needle, replacement) {
 	} else {
 		cadmium_src = cadmium_src.replace(needle, replacement);
 		console.log("[+] Patched: " + repr(desc));
-		console.log(repr(match[0]) + " -> " + repr(replacement));
+		if (match[0].length < 200) { // avoid spamming the console
+			console.log(repr(match[0]) + " -> " + repr(replacement));
+		}
 	}
 }
 
 /* We need to do a synchronous request because we need to eval
-the response before the body of the script finishes executing */
+the response before the body of this script finishes executing */
 var request = new XMLHttpRequest();
 var cadmium_url = document.getElementById("player-core-js").src;
 request.open("GET", cadmium_url + "?no_filter", false); // synchronous
@@ -67,6 +69,12 @@ function get_profile_list() {
 }
 
 do_patch(
+	"Hello world",
+	/(.*)/,
+	"console.log('Hello, I am code which has been injected into playercore!'); $1"
+);
+
+do_patch(
 	"Custom profiles",
 	/(viewableId:.,profiles:).,/,
 	"$1 get_profile_list(),"
@@ -77,7 +85,10 @@ do_patch(
 	/this\...\....\s*\&\&\s*this\.toggle\(\);/,
 	"this.toggle();");
 
+// run our patched copy of playercore
 eval(cadmium_src);
+
+
 
 /* netflix_max_bitrate.js */
 
