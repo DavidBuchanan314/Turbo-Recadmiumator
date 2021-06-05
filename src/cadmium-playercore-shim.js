@@ -81,6 +81,12 @@ do_patch(
 );
 
 do_patch(
+	"Custom profile group",
+	/(name:"default",profiles:)./,
+	"$1 get_profile_list()"
+);
+
+do_patch(
 	"Re-enable Ctrl+Shift+Alt+S menu",
 	/this\...\....\s*\&\&\s*this\.toggle\(\);/,
 	"this.toggle();");
