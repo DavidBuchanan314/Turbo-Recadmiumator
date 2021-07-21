@@ -18,6 +18,7 @@
 		"webRequestBlocking",
 		"*://assets.nflxext.com/*/ffe/player/html/*",
 		"*://www.assets.nflxext.com/*/ffe/player/html/*",
+		"*://*.a.nflxso.net/sec/*/ffe/player/html/*",
 		"*://netflix.com/*",
 		"*://www.netflix.com/*"
 	]
