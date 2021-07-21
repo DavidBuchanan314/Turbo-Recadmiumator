@@ -98,11 +98,9 @@ eval(cadmium_src);
 
 /* netflix_max_bitrate.js */
 
-let getElementByXPath = function (xpath) {
-	return document.evaluate(
-		xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null
-	).singleNodeValue;
-};
+function getElementByXPath(xpath) {
+	return document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+}
 
 let fn = function () {
 	window.dispatchEvent(new KeyboardEvent('keydown', {
@@ -120,21 +118,42 @@ let fn = function () {
 		return false;
 	}
 
-	[VIDEO_SELECT, AUDIO_SELECT].forEach(function (el) {
-		let parent = el.parentElement;
+	let SELECT_LISTS = [VIDEO_SELECT, AUDIO_SELECT];
+	let result = false;
+
+	for (var index = 0; index < SELECT_LISTS.length; index++) {
+		let list = SELECT_LISTS[index];
+		let parent = list.parentElement;
+		let select = parent.querySelector('select');
+
+		if (select.disabled){
+			continue;
+		}
 
 		let options = parent.querySelectorAll('select > option');
 
-		for (var i = 0; i < options.length - 1; i++) {
-			options[i].removeAttribute('selected');
+		if (options.length == 0){
+			return false;
 		}
 
-		options[options.length - 1].setAttribute('selected', 'selected');
-	});
+		if (options.length > 1 && options[0].selected == false){
+			return false;
+		}
 
-	BUTTON.click();
+		for (var i = 0; i < options.length - 1; i++) {
+			options[i].selected = false;
+		}
 
-	return true;
+		options[options.length - 1].selected = true;
+		result = options[options.length - 1].selected;
+	}
+
+	if (result){
+		console.log("max bitrate selected, closing window");
+		BUTTON.click();
+	}
+
+	return result;
 };
 
 let run = function () {
