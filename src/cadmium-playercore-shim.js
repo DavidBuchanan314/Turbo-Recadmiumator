@@ -102,19 +102,19 @@ function getElementByXPath(xpath) {
 	return document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 }
 
-let fn = function () {
-	window.dispatchEvent(new KeyboardEvent('keydown', {
-		keyCode: 83,
-		ctrlKey: true,
-		altKey: true,
-		shiftKey: true,
-	}));
-
+function set_max_bitrate() {
 	const VIDEO_SELECT = getElementByXPath("//div[text()='Video Bitrate']");
 	const AUDIO_SELECT = getElementByXPath("//div[text()='Audio Bitrate']");
 	const BUTTON = getElementByXPath("//button[text()='Override']");
 
 	if (!(VIDEO_SELECT && AUDIO_SELECT && BUTTON)){
+		window.dispatchEvent(new KeyboardEvent('keydown', {
+			keyCode: 83,
+			ctrlKey: true,
+			altKey: true,
+			shiftKey: true,
+		}));
+
 		return false;
 	}
 
@@ -154,11 +154,16 @@ let fn = function () {
 	}
 
 	return result;
-};
+}
 
-let run = function () {
-	fn() || setTimeout(run, 100);
-};
+function set_max_bitrate_run(attempts) {
+	if (!attempts) {
+		console.log("failed to select max bitrate");
+		return;
+	}
+
+	set_max_bitrate() || setTimeout(() => set_max_bitrate_run(attempts - 1), 200);
+}
 
 const WATCH_REGEXP = /netflix.com\/watch\/.*/;
 
@@ -171,7 +176,7 @@ if(my_config["set_max_bitrate"]) {
 
 		if (newLocation !== oldLocation) {
 			oldLocation = newLocation;
-			WATCH_REGEXP.test(newLocation) && run();
+			WATCH_REGEXP.test(newLocation) && set_max_bitrate_run(10);
 		}
 	}, 500);
 }
