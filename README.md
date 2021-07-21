@@ -48,3 +48,5 @@ This codebase is cobbled together with bits and pieces from [truedread/netflix-1
 - https://github.com/TheGoddessInari/netflix-1080p-firefox
 
 - https://github.com/OothecaPickle/netflix-1080p
+
+- https://github.com/jangxx/netflix-1080p
