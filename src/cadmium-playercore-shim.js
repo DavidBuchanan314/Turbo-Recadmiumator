@@ -107,7 +107,7 @@ function set_max_bitrate() {
 	const AUDIO_SELECT = getElementByXPath("//div[text()='Audio Bitrate']");
 	const BUTTON = getElementByXPath("//button[text()='Override']");
 
-	if (!(VIDEO_SELECT && AUDIO_SELECT && BUTTON)){
+	if (!(VIDEO_SELECT && AUDIO_SELECT && BUTTON)) {
 		window.dispatchEvent(new KeyboardEvent('keydown', {
 			keyCode: 66,
 			ctrlKey: true,
@@ -119,46 +119,58 @@ function set_max_bitrate() {
 	}
 
 	let SELECT_LISTS = [VIDEO_SELECT, AUDIO_SELECT];
-	let result = false;
+	let was_set = 0;
 
 	for (var index = 0; index < SELECT_LISTS.length; index++) {
 		let list = SELECT_LISTS[index];
 		let parent = list.parentElement;
-		let select = parent.querySelector('select');
-
-		if (select.disabled){
-			return false;
-		}
 
 		let options = parent.querySelectorAll('select > option');
 
-		if (options.length == 0){
-			return false;
+		for (let i = 0; i < options.length - 1; i++) {
+			options[i].removeAttribute('selected');
 		}
 
-		if (options.length > 1 && options[0].selected == false){
-			return false;
+		if (options.length > 0) {
+			options[options.length - 1].setAttribute('selected', 'selected');
+			was_set += 1;
 		}
+	};
 
-		for (var i = 0; i < options.length - 1; i++) {
-			options[i].selected = false;
+	if (was_set != 2) return false;
+
+	BUTTON.click();
+	set_max_bitrate_finish();
+
+	return true;
+}
+
+function set_max_bitrate_start(attempts) {
+	// hide the bitrate selection menu while we try to simulate the interaction
+	// so that it doesn't rapidly appear and disappear.
+	const styleNode = document.createElement("style");
+	styleNode.textContent = `
+		.player-streams {
+			display: none;
 		}
+	`;
+	styleNode.id = "maxbitrate-hide-menu-style";
+	document.head.appendChild(styleNode);
 
-		options[options.length - 1].selected = true;
-		result = options[options.length - 1].selected;
-	}
+	set_max_bitrate_run(attempts);
+}
 
-	if (result){
-		console.log("max bitrate selected, closing window");
-		BUTTON.click();
-	}
-
-	return result;
+function set_max_bitrate_finish() {
+	// remove the global style node so that the menu becomes visible
+	// on normal user input again
+	const styleNode = document.querySelector("#maxbitrate-hide-menu-style");
+	styleNode.parentNode.removeChild(styleNode);
 }
 
 function set_max_bitrate_run(attempts) {
 	if (!attempts) {
 		console.log("failed to select max bitrate");
+		set_max_bitrate_finish();
 		return;
 	}
 
@@ -169,14 +181,14 @@ const WATCH_REGEXP = /netflix.com\/watch\/.*/;
 
 let oldLocation;
 
-if(my_config["set_max_bitrate"]) {
+if (my_config["set_max_bitrate"]) {
 	console.log("netflix_max_bitrate.js enabled");
 	setInterval(function () {
 		let newLocation = window.location.toString();
 
 		if (newLocation !== oldLocation) {
 			oldLocation = newLocation;
-			WATCH_REGEXP.test(newLocation) && set_max_bitrate_run(10);
+			WATCH_REGEXP.test(newLocation) && set_max_bitrate_start(10);
 		}
 	}, 500);
 }
