@@ -103,13 +103,13 @@ function getElementByXPath(xpath) {
 }
 
 function set_max_bitrate() {
-	const VIDEO_SELECT = getElementByXPath("//div[text()='Video Bitrate']");
+	const VIDEO_SELECT = getElementByXPath("//div[text()='Video Bitrate / VMAF']");
 	const AUDIO_SELECT = getElementByXPath("//div[text()='Audio Bitrate']");
 	const BUTTON = getElementByXPath("//button[text()='Override']");
 
 	if (!(VIDEO_SELECT && AUDIO_SELECT && BUTTON)){
 		window.dispatchEvent(new KeyboardEvent('keydown', {
-			keyCode: 83,
+			keyCode: 66,
 			ctrlKey: true,
 			altKey: true,
 			shiftKey: true,
@@ -127,7 +127,7 @@ function set_max_bitrate() {
 		let select = parent.querySelector('select');
 
 		if (select.disabled){
-			continue;
+			return false;
 		}
 
 		let options = parent.querySelectorAll('select > option');
