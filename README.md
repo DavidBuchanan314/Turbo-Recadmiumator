@@ -25,7 +25,7 @@ It remains to be seen how robust my regexes will be to playercore updates.
 
 Netflix has a bunch of undocumented keyboard shortcuts, that do useful things. This list may be incomplete.
 
-- <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>S</kbd> - Bitrate selection menu (re-enabled by this project)
+- <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd> - Bitrate selection menu (re-enabled by this project) (NOTE: This used to be S, not B!)
 
 - <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>D</kbd> - Debug overlay - displays lots of useful info and stats, including current resolution and bitrate.
 
