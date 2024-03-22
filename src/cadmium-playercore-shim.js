@@ -5,6 +5,9 @@ var my_config = {
 	"use_VP9": false,
 	"use_5.1": false,
 	"set_max_bitrate": true,
+	"use_avc.high": false,
+	"use_avc.prk": true,
+	"use_4k": false,
 }
 
 function repr(obj) {
@@ -36,14 +39,6 @@ var cadmium_src = request.responseText;
 
 function get_profile_list() {
 	custom_profiles = [
-		"playready-h264mpl30-dash",
-		"playready-h264mpl31-dash",
-		"playready-h264mpl40-dash",
-		
-		"playready-h264hpl30-dash",
-		"playready-h264hpl31-dash",
-		"playready-h264hpl40-dash",
-		
 		"heaac-2-dash",
 		"heaac-2hq-dash",
 
@@ -52,6 +47,51 @@ function get_profile_list() {
 		"BIF240",
 		"BIF320"
 	];
+
+        if (my_config["use_avc.high"]) {
+		custom_profiles = custom_profiles.concat([
+                        "playready-h264mpl30-dash",
+			"playready-h264mpl31-dash",
+			"playready-h264mpl40-dash",
+			"playready-h264hpl30-dash",
+			"playready-h264hpl31-dash",
+			"playready-h264hpl40-dash",
+		]);
+	}
+
+        if (my_config["use_avc.prk"]) {
+		custom_profiles = custom_profiles.concat([
+			"h264mpl30-dash-playready-prk-qc",
+                        "h264mpl31-dash-playready-prk-qc",
+                        "h264mpl40-dash-playready-prk-qc",
+		]);
+	}
+
+        if (my_config["use_4k"]) {
+		custom_profiles = custom_profiles.concat([
+			"hevc-main10-L30-dash-cenc",
+		        "hevc-main10-L31-dash-cenc",
+		        "hevc-main10-L40-dash-cenc",
+		        "hevc-main10-L50-dash-cenc",
+		        "hevc-main10-L51-dash-cenc",
+		        "hevc-main10-L30-dash-cenc-live",
+		        "hevc-main10-L31-dash-cenc-live",
+		        "hevc-main10-L40-dash-cenc-live",
+		        "hevc-main10-L41-dash-cenc-live",
+		        "hevc-main10-L50-dash-cenc-live",
+		        "hevc-main10-L51-dash-cenc-live",
+		        "hevc-main10-L30-dash-cenc-prk",
+		        "hevc-main10-L31-dash-cenc-prk",
+		        "hevc-main10-L40-dash-cenc-prk",
+		        "hevc-main10-L41-dash-cenc-prk",
+		        "hevc-main10-L30-dash-cenc-prk-do",
+		        "hevc-main10-L31-dash-cenc-prk-do",
+		        "hevc-main10-L40-dash-cenc-prk-do",
+		        "hevc-main10-L41-dash-cenc-prk-do",
+		        "hevc-main10-L50-dash-cenc-prk-do",
+		        "hevc-main10-L51-dash-cenc-prk-do",
+		]);
+	}
 
 	if (my_config["use_VP9"]) {
 		custom_profiles = custom_profiles.concat([
