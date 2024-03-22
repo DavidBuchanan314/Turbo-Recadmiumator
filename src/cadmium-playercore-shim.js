@@ -3,7 +3,10 @@ console.log("Hello, I am running instead of playercore");
 
 var my_config = {
 	"use_VP9": false,
-	"use_5.1": false,
+	"use_heaac-5.1": false,
+	"use_ddplus-5.1": true,
+	"use_ddplus-2.0": false,
+	"use_ddplus-atmos": false,
 	"set_max_bitrate": true,
 	"use_avc.high": false,
 	"use_avc.prk": true,
@@ -72,6 +75,7 @@ function get_profile_list() {
 			"hevc-main10-L30-dash-cenc",
 		        "hevc-main10-L31-dash-cenc",
 		        "hevc-main10-L40-dash-cenc",
+                        "hevc-main10-L41-dash-cenc",
 		        "hevc-main10-L50-dash-cenc",
 		        "hevc-main10-L51-dash-cenc",
 		        "hevc-main10-L30-dash-cenc-live",
@@ -101,7 +105,31 @@ function get_profile_list() {
 		]);
 	}
 
-	if (my_config["use_5.1"]) {
+        if (my_config["use_ddplus-5.1"]) {
+		custom_profiles = custom_profiles.concat([
+			"ddplus-5.1-dash",
+		]);
+	}
+
+        if (my_config["use_ddplus-5.1"]) {
+		custom_profiles = custom_profiles.concat([
+			"ddplus-5.1-dash",
+		]);
+	}
+
+        if (my_config["use_ddplus-2.0"]) {
+		custom_profiles = custom_profiles.concat([
+			"ddplus-2.0-dash",
+		]);
+	}
+
+        if (my_config["use_ddplus-atmos"]) {
+		custom_profiles = custom_profiles.concat([
+			"ddplus-atmos-dash",
+		]);
+	}
+
+	if (my_config["use_heaac-5.1"]) {
 		custom_profiles.push("heaac-5.1-dash");
 	}
 
