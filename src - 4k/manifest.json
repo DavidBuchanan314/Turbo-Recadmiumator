@@ -1,0 +1,25 @@
+{
+	"manifest_version": 2,
+	"name": "Turbo-Recadmiumator",
+	"description": "4k Hotpatches Netflix cadmium-playercore.js to enhance features",
+	"version": "0.0.4",
+	"author": "Retr0id",
+	"background": {
+		"scripts": [
+			"background.js"
+		]
+	},
+	"web_accessible_resources": [
+		"cadmium-playercore-shim.js"
+	],
+	"permissions": [
+		"storage",
+		"webRequest",
+		"webRequestBlocking",
+		"*://assets.nflxext.com/*/ffe/player/html/*",
+		"*://www.assets.nflxext.com/*/ffe/player/html/*",
+		"*://*.a.nflxso.net/sec/*/ffe/player/html/*",
+		"*://netflix.com/*",
+		"*://www.netflix.com/*"
+	]
+}
