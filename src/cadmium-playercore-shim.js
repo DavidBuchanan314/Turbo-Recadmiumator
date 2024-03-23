@@ -53,7 +53,7 @@ function get_profile_list() {
 
 	if (my_config["use_avc.high"]) {
 		custom_profiles = custom_profiles.concat([
-                        "playready-h264mpl30-dash",
+			"playready-h264mpl30-dash",
 			"playready-h264mpl31-dash",
 			"playready-h264mpl40-dash",
 			"playready-h264hpl30-dash",
@@ -65,35 +65,35 @@ function get_profile_list() {
 	if (my_config["use_avc.prk"]) {
 		custom_profiles = custom_profiles.concat([
 			"h264mpl30-dash-playready-prk-qc",
-                        "h264mpl31-dash-playready-prk-qc",
-                        "h264mpl40-dash-playready-prk-qc",
+			"h264mpl31-dash-playready-prk-qc",
+			"h264mpl40-dash-playready-prk-qc",
 		]);
 	}
 
 	if (my_config["use_4k"]) {
 		custom_profiles = custom_profiles.concat([
 			"hevc-main10-L30-dash-cenc",
-		        "hevc-main10-L31-dash-cenc",
-		        "hevc-main10-L40-dash-cenc",
-                        "hevc-main10-L41-dash-cenc",
-		        "hevc-main10-L50-dash-cenc",
-		        "hevc-main10-L51-dash-cenc",
-		        "hevc-main10-L30-dash-cenc-live",
-		        "hevc-main10-L31-dash-cenc-live",
-		        "hevc-main10-L40-dash-cenc-live",
-		        "hevc-main10-L41-dash-cenc-live",
-		        "hevc-main10-L50-dash-cenc-live",
-		        "hevc-main10-L51-dash-cenc-live",
-		        "hevc-main10-L30-dash-cenc-prk",
-		        "hevc-main10-L31-dash-cenc-prk",
-		        "hevc-main10-L40-dash-cenc-prk",
-		        "hevc-main10-L41-dash-cenc-prk",
-		        "hevc-main10-L30-dash-cenc-prk-do",
-		        "hevc-main10-L31-dash-cenc-prk-do",
-		        "hevc-main10-L40-dash-cenc-prk-do",
-		        "hevc-main10-L41-dash-cenc-prk-do",
-		        "hevc-main10-L50-dash-cenc-prk-do",
-		        "hevc-main10-L51-dash-cenc-prk-do",
+			"hevc-main10-L31-dash-cenc",
+			"hevc-main10-L40-dash-cenc",
+			"hevc-main10-L41-dash-cenc",
+			"hevc-main10-L50-dash-cenc",
+			"hevc-main10-L51-dash-cenc",
+			"hevc-main10-L30-dash-cenc-live",
+			"hevc-main10-L31-dash-cenc-live",
+			"hevc-main10-L40-dash-cenc-live",
+			"hevc-main10-L41-dash-cenc-live",
+			"hevc-main10-L50-dash-cenc-live",
+			"hevc-main10-L51-dash-cenc-live",
+			"hevc-main10-L30-dash-cenc-prk",
+			"hevc-main10-L31-dash-cenc-prk",
+			"hevc-main10-L40-dash-cenc-prk",
+			"hevc-main10-L41-dash-cenc-prk",
+			"hevc-main10-L30-dash-cenc-prk-do",
+			"hevc-main10-L31-dash-cenc-prk-do",
+			"hevc-main10-L40-dash-cenc-prk-do",
+			"hevc-main10-L41-dash-cenc-prk-do",
+			"hevc-main10-L50-dash-cenc-prk-do",
+			"hevc-main10-L51-dash-cenc-prk-do",
 		]);
 	}
 
