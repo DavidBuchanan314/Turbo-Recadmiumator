@@ -51,7 +51,7 @@ function get_profile_list() {
 		"BIF320"
 	];
 
-        if (my_config["use_avc.high"]) {
+	if (my_config["use_avc.high"]) {
 		custom_profiles = custom_profiles.concat([
                         "playready-h264mpl30-dash",
 			"playready-h264mpl31-dash",
@@ -62,7 +62,7 @@ function get_profile_list() {
 		]);
 	}
 
-        if (my_config["use_avc.prk"]) {
+	if (my_config["use_avc.prk"]) {
 		custom_profiles = custom_profiles.concat([
 			"h264mpl30-dash-playready-prk-qc",
                         "h264mpl31-dash-playready-prk-qc",
@@ -70,7 +70,7 @@ function get_profile_list() {
 		]);
 	}
 
-        if (my_config["use_4k"]) {
+	if (my_config["use_4k"]) {
 		custom_profiles = custom_profiles.concat([
 			"hevc-main10-L30-dash-cenc",
 		        "hevc-main10-L31-dash-cenc",
@@ -105,25 +105,25 @@ function get_profile_list() {
 		]);
 	}
 
-        if (my_config["use_ddplus-5.1"]) {
+	if (my_config["use_ddplus-5.1"]) {
 		custom_profiles = custom_profiles.concat([
 			"ddplus-5.1-dash",
 		]);
 	}
 
-        if (my_config["use_ddplus-5.1"]) {
+	if (my_config["use_ddplus-5.1"]) {
 		custom_profiles = custom_profiles.concat([
 			"ddplus-5.1-dash",
 		]);
 	}
 
-        if (my_config["use_ddplus-2.0"]) {
+	if (my_config["use_ddplus-2.0"]) {
 		custom_profiles = custom_profiles.concat([
 			"ddplus-2.0-dash",
 		]);
 	}
 
-        if (my_config["use_ddplus-atmos"]) {
+	if (my_config["use_ddplus-atmos"]) {
 		custom_profiles = custom_profiles.concat([
 			"ddplus-atmos-dash",
 		]);
