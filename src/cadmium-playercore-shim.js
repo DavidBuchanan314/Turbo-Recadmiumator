@@ -111,12 +111,6 @@ function get_profile_list() {
 		]);
 	}
 
-	if (my_config["use_ddplus-5.1"]) {
-		custom_profiles = custom_profiles.concat([
-			"ddplus-5.1-dash",
-		]);
-	}
-
 	if (my_config["use_ddplus-2.0"]) {
 		custom_profiles = custom_profiles.concat([
 			"ddplus-2.0-dash",
