@@ -4,6 +4,7 @@ console.log("Hello, I am running instead of playercore");
 var my_config = {
 	"use_VP9": false,
 	"use_heaac-5.1": false,
+	"use_ddplushq-5.1": false,
 	"use_ddplus-5.1": true,
 	"use_ddplus-2.0": false,
 	"use_ddplus-atmos": false,
@@ -108,6 +109,12 @@ function get_profile_list() {
 	if (my_config["use_ddplus-5.1"]) {
 		custom_profiles = custom_profiles.concat([
 			"ddplus-5.1-dash",
+		]);
+	}
+
+	if (my_config["use_ddplushq-5.1"]) {
+		custom_profiles = custom_profiles.concat([
+			"ddplus-5.1hq-dash",
 		]);
 	}
 

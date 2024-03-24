@@ -1,9 +1,18 @@
 {
 	"manifest_version": 2,
-	"name": "Turbo-Recadmiumator",
+	"name": "Netflix-Playback-Features",
 	"description": "Hotpatches Netflix cadmium-playercore.js to enhance features",
 	"version": "0.0.2",
 	"author": "Retr0id",
+	"action": {
+		"default_icon": {
+			"128": "img/icon128.png"
+		}
+	},
+	"icons": {
+		"48": "img/icon48.png",
+		"128": "img/icon128.png"
+	},
 	"background": {
 		"scripts": [
 			"background.js"
