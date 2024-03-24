@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Turbo-Recadmiumator",
 	"description": "Hotpatches Netflix cadmium-playercore.js to enhance features",
-	"version": "0.0.2",
+	"version": "0.0.1",
 	"author": "Retr0id",
 	"background": {
 		"scripts": [

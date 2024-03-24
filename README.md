@@ -21,8 +21,6 @@ It remains to be seen how robust my regexes will be to playercore updates.
 
 - Auto-select stream with max available bitrate.
 
-- Under [my_config](https://github.com/DavidBuchanan314/Turbo-Recadmiumator/blob/50dff66f61a08b95c3206e2766ad4ed8e9bfe706/src/cadmium-playercore-shim.js#L4) users can choose custom profiles. Like vp9, 5.1, max_bitrate, avc.high, avc.prk and 4k hevc.
-
 ## Undocumented Keyboard Shortcuts:
 
 Netflix has a bunch of undocumented keyboard shortcuts, that do useful things. This list may be incomplete.
