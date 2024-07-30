@@ -44,9 +44,8 @@ chrome.webRequest.onBeforeRequest.addListener(
 		}
 	}, {
 		urls: [
-			"*://assets.nflxext.com/*/ffe/player/html/*",
-			"*://www.assets.nflxext.com/*/ffe/player/html/*",
-			"*://*.a.nflxso.net/sec/*/ffe/player/html/*"
+			"*://assets.nflxext.com/player/html/ffe/*",
+			"*://*.a.nflxso.net/sec/player/html/ffe/*"
 		]
 	}, ["blocking"]
 );
