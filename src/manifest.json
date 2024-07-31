@@ -1,24 +1,27 @@
 {
-	"manifest_version": 2,
-	"name": "Turbo-Recadmiumator",
+	"manifest_version": 3,
+	"name": "Turbo Recadmiumator",
 	"description": "Hotpatches Netflix cadmium-playercore.js to enhance features",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"author": "Retr0id",
-	"background": {
-		"scripts": [
-			"background.js"
-		]
-	},
-	"web_accessible_resources": [
-		"cadmium-playercore-shim.js"
-	],
+	"web_accessible_resources": [{
+		"resources": [ "cadmium-playercore-shim.js" ],
+		"matches": [ "*://*/*" ]
+	}],
 	"permissions": [
-		"storage",
-		"webRequest",
-		"webRequestBlocking",
+		"declarativeNetRequest"
+	],
+	"host_permissions": [
 		"*://assets.nflxext.com/player/html/ffe/*",
 		"*://*.a.nflxso.net/sec/player/html/ffe/*",
 		"*://netflix.com/*",
 		"*://www.netflix.com/*"
-	]
+	],
+	"declarative_net_request": {
+		"rule_resources": [{
+			"id": "to_be_patched",
+			"enabled": true,
+			"path": "rules.json"
+		}]
+	}
 }

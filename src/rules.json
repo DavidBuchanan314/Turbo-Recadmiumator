@@ -1,0 +1,21 @@
+[
+	{
+		"id": 1,
+		"action": {
+			"type": "allow"
+		},
+		"condition": {
+			"regexFilter": "cadmium-playercore.*\\.js\\?no_filter$"
+		}
+	},
+	{
+		"id": 2,
+		"action": {
+			"type": "redirect",
+			"redirect": { "extensionPath": "/cadmium-playercore-shim.js" }
+		},
+		"condition": {
+			"regexFilter": "cadmium-playercore.*\\.js"
+		}
+	}
+]
