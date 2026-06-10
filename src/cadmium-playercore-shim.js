@@ -70,8 +70,8 @@ function get_profile_list() {
 
 do_patch(
 	"Hello world",
-	/(.*)/,
-	"console.log('Hello, I am code which has been injected into playercore!'); $1"
+	/^/,
+	"console.log('Hello, I am code which has been injected into playercore!'); "
 );
 
 do_patch(
@@ -82,13 +82,15 @@ do_patch(
 
 do_patch(
 	"Custom profile group",
-	/(name:"default",profiles:)./,
+	// .profileGroups=[{name:"default",\n?profiles:I}],
+	/(\n?name:"default",\n?profiles:)./,
 	"$1 get_profile_list()"
 );
 
 do_patch(
 	"Re-enable Ctrl+Shift+Alt+S menu",
-	/this\...\....\s*\&\&\s*this\.toggle\(\);/,
+	// Y.Rka&&this.Vda.A0a&&this.toggle()};b.zmb
+	/this\.[^\.]\n?[^\.]*\....\s*\&\&\n?\s*this\.toggle\(\)/,
 	"this.toggle();");
 
 // run our patched copy of playercore
